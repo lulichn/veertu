@@ -5,7 +5,7 @@ MITAMAE_OPT="--log-level=debug"
 bin/setup install
 
 case "$(uname)" in
-  "Darwin")  ./bin/mitamae local $@ ./lib/bootstrap.rb "$MITAMAE_OPT" ;;
+  "Darwin")  ./bin/mitamae local $@ ./lib/bootstrap.rb --node-yaml=node.yaml "$MITAMAE_OPT" ;;
   *) exit 1 ;;
 esac
 
