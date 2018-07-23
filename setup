@@ -1,9 +1,11 @@
 #!/bin/sh
 
+MITAMAE_OPT="--log-level=debug"
+
 bin/setup install
 
 case "$(uname)" in
-  "Darwin")  ./bin/mitamae local $@ ./lib/bootstrap.rb ;;
+  "Darwin")  ./bin/mitamae local $@ ./lib/bootstrap.rb "$MITAMAE_OPT" ;;
   *) exit 1 ;;
 esac
 

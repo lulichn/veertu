@@ -1,0 +1,3 @@
+[submodule "plugins/mitamae-plugin-resource-darwin_installer"]
+	path = plugins/mitamae-plugin-resource-darwin_installer
+	url = https://github.com/lulichn/mitamae-plugin-resource-darwin_installer.git
