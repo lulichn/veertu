@@ -1,14 +1,14 @@
 #!/bin/sh
 
 repo_url="https://github.com/lulichn/veertu.git"
-dest="~/veertu"
+dest="$HOME/veertu"
 
 if !(type /Library/Developer/CommandLineTools/usr/bin/git > /dev/null 2>&1); then
 	clt=$(/usr/sbin/softwareupdate -l | grep -B 1 -E "Command Line (Developer|Tools)" | awk -F"*" '/^ +\\*/ {print $2}' | sed 's/^ *//' | tail -n1)
 	sudo /usr/sbin/softwareupdate -i "$clt"
 fi
 
-if [ ! -d ~/veertu ]; then
+if [ ! -d $dest ]; then
 	git clone $repo_url $dest
 	cd $dest
 	git submodule update --init
@@ -18,6 +18,4 @@ else
 	git reset --hard origin/master
 	git submodule foreach git reset --hard
 fi
-
-./setup
 
