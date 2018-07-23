@@ -1,0 +1,9 @@
+#!/bin/sh
+
+bin/setup install
+
+case "$(uname)" in
+  "Darwin")  ./bin/mitamae local $@ ./lib/bootstrap.rb ;;
+  *) exit 1 ;;
+esac
+
